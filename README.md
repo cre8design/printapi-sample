@@ -51,6 +51,7 @@ mbs 	| Bureausteun
 mamg 	| Afstandhouders met gaten
 msh 	| Spinhaken
 mtp 	| Tesa Powerstrips
+frames 	| Ingelijst
 
 ## Authorization
 Authorize the request by adding your Bearer Token to the  header. 
