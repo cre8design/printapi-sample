@@ -22,7 +22,7 @@ e.g. pl4-20-30-map
 #### Product Identifiers
 Identifier | Name
 ----- | ------
-pl4  	| Plexiglas 4mm
+plg  	| Plexiglas 4mm
 cvs2  	| Canvas 2cm
 cvs4  	| Canvas 4cm
 dbw  	| Dibond Wit
@@ -32,11 +32,12 @@ frx5  	| Forex 5mm
 frx10  	| Forex 10mm
 fbh  	| Fotobehang
 gls4  	| Glas 4mm
-houtd 	| Hout 10 mm
+hout 	| Hout 10 mm
 mgnt 	| Magnet
 rup 	| Roll Up
 stk	 	| Sticker Wit
 tp 		| Tuin Poster
+poster 	| Poster
 diff	| Anders
 
 #### Mounting system Identifiers
