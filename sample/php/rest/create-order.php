@@ -71,7 +71,7 @@ function createOrder(
 //                 ],
 //                 items => [
 //                     [
-//                         'product' => 'pl4',
+//                         'product' => 'plg-30-20-map',
 //                         'qty' => 1,
 //                         'layout' => [
 //                             'print_file_url' => 'http://some.url.com/file.pdf',

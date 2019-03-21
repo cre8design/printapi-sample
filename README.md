@@ -2,20 +2,10 @@
 Example code for creating and managing orders. 
 Login at to see your orders https://shop.printingambitions.com/customer/account/login/
 
-## Content
-1. [Authorization](##authorization)
-2. [Get Order](##get-order)
-3. [Get Order List](##get-order-list)
-4. [Get Product](##get-product)
-5. [Get Product List](##get-product-list)
-6. [Create Order](##create-order)
-7. [Error Handling](##error-handling)
-
-
 ## Product Naming Scheme
 Products are named as followed. 
 ``` 
-{{product_identifier}}-{{width}}-{{height}}-{{mounting_system_identifier}}-{{attribute-1}}... 
+{{product_identifier}}-{{width}}-{{height}}-{{mounting_system_identifier}}-{{attribute-1}}...
 ```
 e.g. pl4-20-30-map
 
@@ -66,9 +56,7 @@ Authorization: Bearer {{TOKEN}}
 ``` [GET] https://shop.printingambitions.com/rest/V1/print/product/list/:page ```
 - :page = Page Number
 #### PARAMS
-- ```?product={{product}}``` Filter by product name
-- ```?width={{width}}``` Filter by width
-- ```?height={{height}}``` Filter by height
+- ```?product_filter={{product}}``` Filter by product name
 #### RESULT
 ```javascript
 {
@@ -246,7 +234,7 @@ Authorization: Bearer {{TOKEN}}
         "shipping_address": {                               // Shipping Address Data
             "firstname": "John",
             "lastname": "Doe",
-            "company": "Example Company Co.",
+            "company": "Example Company Co.",               // Optional
             "country_id": "NL",
             "postcode": "AD1234",
             "city": "Gronau",

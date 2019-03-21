@@ -38,4 +38,4 @@ function getProduct(string $token, string $product)
     return $response;
 }
 
-// $exampleRequest = getProduct('{{TOKEN}}', 'pl4-20-30-map');
+// $exampleRequest = getProduct('{{TOKEN}}', 'plg-20-30-map');
