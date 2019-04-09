@@ -42,7 +42,7 @@ mamg 	| Afstandhouders met gaten
 msh 	| Spinhaken
 mtp 	| Tesa Powerstrips
 framed 	| Ingelijst/Passe Partout (Black)
-framed 	| Ingelijst/Passe Partout (White)
+framedw 	| Ingelijst/Passe Partout (White)
 
 ## Authorization
 Authorize the request by adding your Bearer Token to the  header. 
