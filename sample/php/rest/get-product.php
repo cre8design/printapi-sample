@@ -9,7 +9,7 @@
 function getProduct(string $token, string $product)
 {
     $method = 'GET';
-    $url = 'http://shop.printingambitions.com/rest/V1/print/product/get/' . $product;
+    $url = 'https://shop.printingambitions.com/rest/V1/print/product/get/' . $product;
     $header = [
         'Content-Type: application/json',
         'Authorization: Bearer ' . $token
