@@ -41,7 +41,8 @@ mbs 	| Bureausteun
 mamg 	| Afstandhouders met gaten
 msh 	| Spinhaken
 mtp 	| Tesa Powerstrips
-framed 	| Ingelijst
+framed 	| Ingelijst/Passe Partout (Black)
+framed 	| Ingelijst/Passe Partout (White)
 
 ## Authorization
 Authorize the request by adding your Bearer Token to the  header. 
