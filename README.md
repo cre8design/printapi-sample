@@ -43,15 +43,17 @@ mamg 	| Afstandhouders met gaten
 msh 	| Spinhaken
 mtp 	| Tesa Powerstrips
 framed 	| Ingelijst/Passe Partout (Black)
-framedw 	| Ingelijst/Passe Partout (White)
+framedw | Ingelijst/Passe Partout (White)
+clipb 	| Clip (Black) 
+clips	| Clip (Silver) 
+clipg 	| Clip (Gold) 
+wood 	| Wood Mounting System
 
 ## Authorization
 Authorize the request by adding your Bearer Token to the  header. 
 ``` 
 Authorization: Bearer {{TOKEN}} 
 ```
-
-
 
 ## Get Product List
 #### URL
