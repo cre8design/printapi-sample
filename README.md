@@ -44,10 +44,6 @@ msh 	| Spinhaken
 mtp 	| Tesa Powerstrips
 framed 	| Ingelijst/Passe Partout (Black)
 framedw | Ingelijst/Passe Partout (White)
-clipb 	| Clip (Black) 
-clips	| Clip (Silver) 
-clipg 	| Clip (Gold) 
-wood 	| Wood Mounting System
 
 ## Authorization
 Authorize the request by adding your Bearer Token to the  header. 
@@ -71,15 +67,16 @@ Authorization: Bearer {{TOKEN}}
         {
             "product": "pl4-20-40-map",      // Product Identifier
             "price": 8.88,                   // Price
-            "width": 20,                     // Height in cm
-            "height": 40,                    // Width in cm
-            "mounting_system": "map",        // Mounting system identifier
-            "resolution": 150,               // Required resolution in ppi
-            "bleed": 0.3,                    // Required Bleed
-            "white_bleed": 0,                // Required White Wleed
+            "is_print_product": true,        // Wether the Product is printable
+            "width": 20,                     // Height in cm (Only if product is printable)
+            "height": 40,                    // Width in cm (Only if product is printable)
+            "mounting_system": "map",        // Mounting system identifier (Only if product is printable)
+            "resolution": 150,               // Required resolution in ppi (Only if product is printable)
+            "bleed": 0.3,                    // Required Bleed (Only if product is printable)
+            "white_bleed": 0,                // Required White Wleed (Only if product is printable)
             "mimetype": ".jpg",              // Required Mimetype (not implemented yet)
-            "color_profile": "adobergb.icc", // Required Color profile
-            "flip": true                     // Flip flag
+            "color_profile": "adobergb.icc", // Required Color profile (Only if product is printable)
+            "flip": true                     // Flip flag (Only if product is printable)
         },
         ...
     ]
@@ -96,15 +93,16 @@ Authorization: Bearer {{TOKEN}}
 {
     "product": "pl4-20-40-map",      // Product Identifier
     "price": 8.88,                   // Price
-    "width": 20,                     // Height in cm
-    "height": 40,                    // Width in cm
-    "mounting_system": "map",        // Mounting system identifier
-    "resolution": 150,               // Required resolution in ppi
-    "bleed": 0.3,                    // Required Bleed
-    "white_bleed": 0,                // Required White Wleed
-    "mimetype": ".jpg",              // Required Mimetype (not implemented yet)
-    "color_profile": "adobergb.icc", // Required Color profile
-    "flip": true                     // Flip flag
+    "is_print_product": true,        // Wether the Product is printable
+    "width": 20,                     // Height in cm (Only if product is printable)
+    "height": 40,                    // Width in cm (Only if product is printable)
+    "mounting_system": "map",        // Mounting system identifier (Only if product is printable)
+    "resolution": 150,               // Required resolution in ppi (Only if product is printable)
+    "bleed": 0.3,                    // Required Bleed (Only if product is printable)
+    "white_bleed": 0,                // Required White Wleed (Only if product is printable)
+    "mimetype": ".jpg",              // Required Mimetype (not implemented yet) (Only if product is printable)
+    "color_profile": "adobergb.icc", // Required Color profile (Only if product is printable)
+    "flip": true                     // Flip flag (Only if product is printable)
 }
 ```
 
@@ -150,7 +148,8 @@ Authorization: Bearer {{TOKEN}}
                     "product": "pl4-20-30-map",             // Product Identifier
                     "qty": 12,                              // Quantity Ordererd
                     "price": 18.88                          // Price
-                    "layout": {                             // Layout data
+                    "is_print_product": true,               // Wether the Product is printable
+                    "layout": {                             // Layout data (Only if product is printable)
                         "width": 20,                        // Expected Width in cm
                         "height": 30,                       // Expected Height in cm
                         "bleed": 0.3,                       // Expected Bleed
@@ -206,7 +205,8 @@ Authorization: Bearer {{TOKEN}}
             "product": "pl4-20-30-map",             // Product Identifier
             "qty": 12,                              // Quantity Ordererd
             "price": 18.88                          // Price
-            "layout": {                             // Layout data
+            "is_print_product": true,               // Wether the Product is printable
+            "layout": {                             // Layout data (Only if product is printable)
                 "width": 20,                        // Expected Width in cm
                 "height": 30,                       // Expected Height in cm
                 "bleed": 0.3,                       // Expected Bleed
@@ -250,7 +250,7 @@ Authorization: Bearer {{TOKEN}}
             {
                 "product": "pl4-20-30-map",                 // Product Identifier
                 "qty": 12,                                  // Quantity to order
-                "layout": {                                 // Layout data
+                "layout": {                                 // Layout data (Only for printable products)
                     "print_file_url": "http://sample-website.com/print/file/1234.pdf" // URL to print fiile
                 }
             },
@@ -288,7 +288,8 @@ Authorization: Bearer {{TOKEN}}
             "product": "pl4-20-30-map",             // Product Identifier
             "qty": 12,                              // Quantity Ordererd
             "price": 18.88                          // Price
-            "layout": {                             // Layout data
+            "is_print_product": true,               // Wether the Product is printable
+            "layout": {                             // Layout data (Only for printable products)
                 "width": 20,                        // Expected Width in cm
                 "height": 30,                       // Expected Height in cm
                 "bleed": 0.3,                       // Expected Bleed
