@@ -309,8 +309,8 @@ Authorization: Bearer {{TOKEN}}
 
 
 ## Create Order Bulk
-Execution may take a while
-Maxium 50 orders
+- Execution may take a while
+- Maxium 50 orders
 #### URL
 ``` [POST] https://shop.printingambitions.com/rest/V1/print/order/create/bulk ```
 #### REQUEST
@@ -352,16 +352,16 @@ Maxium 50 orders
     {
         "has_error": false,
         "order_id": "17000343",
-        "order_request" => [
+        "order_request": {
             // Order Request
-        ]
+        }
     },
     {
         "has_error": true,
         "message": "Some error message",
-        "order_request" => [
+        "order_request": {
             // Order Request
-        ]
+        }
     }
 ]
 ```
