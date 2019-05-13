@@ -308,6 +308,63 @@ Authorization: Bearer {{TOKEN}}
 ```
 
 
+## Create Order Bulk
+Execution may take a while
+Maxium 50 orders
+#### URL
+``` [POST] https://shop.printingambitions.com/rest/V1/print/order/create/bulk ```
+#### REQUEST
+```javascript
+{
+    "order_requests": [
+        {
+            "order_reference": "some-reference",                // Optional order reference
+            "order_message": "Lorem ipsum dolor sit amet",      // Optional order message
+            "shipping_address": {                               // Shipping Address Data
+                "firstname": "John",
+                "lastname": "Doe",
+                "company": "Example Company Co.",               // Optional
+                "country_id": "NL",
+                "postcode": "AD1234",
+                "city": "Gronau",
+                "street": "Maybachstraße 4",
+                "telephone": "01578798708",
+                "email": "john@doe.com"
+            },
+            "items": [                                          // Array of order items
+                {
+                    "product": "pl4-20-30-map",                 // Product Identifier
+                    "qty": 12,                                  // Quantity to order
+                    "layout": {                                 // Layout data (Only for printable products)
+                        "print_file_url": "http://sample-website.com/print/file/1234.pdf" // URL to print fiile
+                    }
+                },
+                ...
+            ]
+        },
+        // ...
+    ]
+}
+```
+#### RESULT
+```javascript
+[
+    {
+        "has_error": false,
+        "order_id": "17000343",
+        "order_request" => [
+            // Order Request
+        ]
+    },
+    {
+        "has_error": true,
+        "message": "Some error message",
+        "order_request" => [
+            // Order Request
+        ]
+    }
+]
+```
 
 ## Error Handling
 In case of an error the API returns an error message.
