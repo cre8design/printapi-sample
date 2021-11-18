@@ -44,6 +44,7 @@ msh 	| Spinhaken
 mtp 	| Tesa Powerstrips
 framed 	| Ingelijst/Passe Partout (Black)
 framedw | Ingelijst/Passe Partout (White)
+framedbl | Ingelijst/Passe Partout (Blank)
 
 ## Authorization
 Authorize the request by adding your Bearer Token to the  header. 
