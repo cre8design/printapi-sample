@@ -42,7 +42,7 @@ e.g. pl4-20-30-map
 | none       | No Mountingsystem               |
 | mbk        | Blind Kunststoff                |
 | mfotw      | Flat on the Wall                |
-| map        | Aluminiumprofil``               |
+| map        | Aluminiumprofil                 |
 | msp        | Spandraad                       |
 | mbs        | Bureausteun                     |
 | mamg       | Afstandhouders met gaten        |
