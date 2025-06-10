@@ -1,64 +1,79 @@
 # Print Api Sample
-Example code for creating and managing orders. 
-Login at to see your orders https://shop.printingambitions.com/customer/account/login/
+
+Example code for creating and managing orders.
+Login at to see your orders https://printingambitions.com/
 
 ## Product Naming Scheme
-Products are named as followed. 
-``` 
+
+Products are named as followed.
+
+```
 {{product_identifier}}-{{width}}-{{height}}-{{mounting_system_identifier}}-{{attribute-1}}...
 ```
+
 e.g. pl4-20-30-map
 
 #### Product Identifiers
-Identifier | Name
------ | ------
-plg  	| Plexiglas 4mm
-cvs2  	| Canvas 2cm
-cvs4  	| Canvas 4cm
-dbw  	| Dibond Wit
-rvs 	| Dibond BF
-frx3  	| Forex 3mm
-frx5  	| Forex 5mm
-frx10  	| Forex 10mm
-fbh  	| Fotobehang
-gls4  	| Glas 4mm
-hout 	| Hout 10 mm
-mgnt 	| Magnet
-rup 	| Roll Up
-stk	 	| Sticker Wit
-tp 		| Tuin Poster
-poster 	| Poster
-diff	| Anders
+
+| Identifier | Name          |
+| ---------- | ------------- |
+| plg        | Plexiglas 4mm |
+| cvs2       | Canvas 2cm    |
+| cvs4       | Canvas 4cm    |
+| dbw        | Dibond Wit    |
+| rvs        | Dibond BF     |
+| frx3       | Forex 3mm     |
+| frx5       | Forex 5mm     |
+| frx10      | Forex 10mm    |
+| fbh        | Fotobehang    |
+| gls4       | Glas 4mm      |
+| hout       | Hout 10 mm    |
+| mgnt       | Magnet        |
+| rup        | Roll Up       |
+| stk        | Sticker Wit   |
+| tp         | Tuin Poster   |
+| poster     | Poster        |
+| diff       | Anders        |
 
 #### Mounting system Identifiers
-Identifier | Name
------ | ------
-none 	| No Mountingsystem
-mbk 	| Blind Kunststoff
-mfotw 	| Flat on the Wall
-map 	| Aluminiumprofil``
-msp 	| Spandraad
-mbs 	| Bureausteun
-mamg 	| Afstandhouders met gaten
-msh 	| Spinhaken
-mtp 	| Tesa Powerstrips
-framed 	| Ingelijst/Passe Partout (Black)
-framedw | Ingelijst/Passe Partout (White)
-framedbl | Ingelijst/Passe Partout (Blank)
+
+| Identifier | Name                            |
+| ---------- | ------------------------------- |
+| none       | No Mountingsystem               |
+| mbk        | Blind Kunststoff                |
+| mfotw      | Flat on the Wall                |
+| map        | Aluminiumprofil``               |
+| msp        | Spandraad                       |
+| mbs        | Bureausteun                     |
+| mamg       | Afstandhouders met gaten        |
+| msh        | Spinhaken                       |
+| mtp        | Tesa Powerstrips                |
+| framed     | Ingelijst/Passe Partout (Black) |
+| framedw    | Ingelijst/Passe Partout (White) |
+| framedbl   | Ingelijst/Passe Partout (Blank) |
 
 ## Authorization
-Authorize the request by adding your Bearer Token to the  header. 
-``` 
-Authorization: Bearer {{TOKEN}} 
+
+Authorize the request by adding your Bearer Token to the header.
+
+```
+Authorization: Bearer {{TOKEN}}
 ```
 
 ## Get Product List
+
 #### URL
-``` [GET] https://shop.printingambitions.com/rest/V1/print/product/list/:page ```
+
+`[GET] https://shop.printingambitions.com/rest/V1/print/product/list/:page`
+
 - :page = Page Number
+
 #### PARAMS
-- ```?product_filter={{product}}``` Filter by product name
+
+- `?product_filter={{product}}` Filter by product name
+
 #### RESULT
+
 ```javascript
 {
     "total_count": 4,
@@ -84,12 +99,16 @@ Authorization: Bearer {{TOKEN}}
 }
 ```
 
-
 ## Get Product
+
 #### URL
-``` [GET] https://shop.printingambitions.com/rest/V1/print/product/get/:product ```
-- ```:product``` = Product Identifier
+
+`[GET] https://shop.printingambitions.com/rest/V1/print/product/get/:product`
+
+- `:product` = Product Identifier
+
 #### RESULT
+
 ```javascript
 {
     "product": "pl4-20-40-map",      // Product Identifier
@@ -107,15 +126,20 @@ Authorization: Bearer {{TOKEN}}
 }
 ```
 
-
-
 ## Get Order List
+
 #### URL
-``` [GET] https://shop.printingambitions.com/rest/V1/print/order/list/:page ```
-- ```:page``` = Page Number
+
+`[GET] https://shop.printingambitions.com/rest/V1/print/order/list/:page`
+
+- `:page` = Page Number
+
 #### PARAMS
-- ```?reference={{reference}}``` Filter by reference
+
+- `?reference={{reference}}` Filter by reference
+
 #### RESULT
+
 ```javascript
 {
     "total_count": 4,       // Total count of all Orders
@@ -124,7 +148,7 @@ Authorization: Bearer {{TOKEN}}
     "items": [
         {
             "order_id": 2000000988,                         // Order ID
-            "order_reference": "reference 123",             // Order reference (optional)   
+            "order_reference": "reference 123",             // Order reference (optional)
             "order_message": "Lorem ipsum dolor sit amet",  // Order message (optional)
             "status": "processing",                         // Order status
             "currency": "EUR",                              // Currency
@@ -171,17 +195,20 @@ Authorization: Bearer {{TOKEN}}
 }
 ```
 
-
-
 ## Get Order
+
 #### URL
-``` [GET] https://shop.printingambitions.com/rest/V1/print/order/list/:order_id ```
-- ```:order_id``` = Order ID
+
+`[GET] https://shop.printingambitions.com/rest/V1/print/order/list/:order_id`
+
+- `:order_id` = Order ID
+
 #### RESULT
+
 ```javascript
 {
     "order_id": 2000000988,                         // Order ID
-    "order_reference": "reference 123",             // Order reference (optional)   
+    "order_reference": "reference 123",             // Order reference (optional)
     "order_message": "Lorem ipsum dolor sit amet",  // Order message (optional)
     "status": "processing",                         // Order status
     "currency": "EUR",                              // Currency
@@ -225,12 +252,14 @@ Authorization: Bearer {{TOKEN}}
 }
 ```
 
-
-
 ## Create Order
+
 #### URL
-``` [POST] https://shop.printingambitions.com/rest/V1/print/order/create ```
+
+`[POST] https://shop.printingambitions.com/rest/V1/print/order/create`
+
 #### REQUEST
+
 ```javascript
 {
     "order_request": {
@@ -260,11 +289,13 @@ Authorization: Bearer {{TOKEN}}
     }
 }
 ```
+
 #### RESULT
+
 ```javascript
 {
     "order_id": 2000000988,                         // Order ID
-    "order_reference": "reference 123",             // Order reference (optional)   
+    "order_reference": "reference 123",             // Order reference (optional)
     "order_message": "Lorem ipsum dolor sit amet",  // Order message (optional)
     "status": "processing",                         // Order status
     "currency": "EUR",                              // Currency
@@ -308,13 +339,17 @@ Authorization: Bearer {{TOKEN}}
 }
 ```
 
-
 ## Create Order Bulk
+
 - Execution may take a while
 - Maxium 50 orders
+
 #### URL
-``` [POST] https://shop.printingambitions.com/rest/V1/print/order/create/bulk ```
+
+`[POST] https://shop.printingambitions.com/rest/V1/print/order/create/bulk`
+
 #### REQUEST
+
 ```javascript
 {
     "order_requests": [
@@ -347,29 +382,34 @@ Authorization: Bearer {{TOKEN}}
     ]
 }
 ```
+
 #### RESULT
+
 ```javascript
 [
-    {
-        "has_error": false,
-        "order_id": "17000343",
-        "order_request": {
-            // Order Request
-        }
+  {
+    has_error: false,
+    order_id: "17000343",
+    order_request: {
+      // Order Request
     },
-    {
-        "has_error": true,
-        "message": "Some error message",
-        "order_request": {
-            // Order Request
-        }
-    }
-]
+  },
+  {
+    has_error: true,
+    message: "Some error message",
+    order_request: {
+      // Order Request
+    },
+  },
+];
 ```
 
 ## Error Handling
+
 In case of an error the API returns an error message.
+
 #### Result
+
 ```javascript
 {
     "message": "{{Error message}}" // String with error message
